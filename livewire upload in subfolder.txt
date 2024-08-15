@@ -1,0 +1,10 @@
+'asset_url' => env('APP_URL').'/vendor/livewire/livewire.js', 
+add this in livewire config.
+
+public function boot(): void
+    {
+        //
+        Livewire::setUpdateRoute(function ($handle) {
+            return Route::post( '/helping-hand/livewire/update', $handle);
+        });
+    }
